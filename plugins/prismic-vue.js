@@ -4,6 +4,6 @@ import linkResolver from "./link-resolver"
 import htmlSerializer from './html-serializer'
 
 Vue.use(PrismicVue, {
-  linkResolver,
-  htmlSerializer
+  linkResolver: linkResolver,
+  htmlSerializer,
 })

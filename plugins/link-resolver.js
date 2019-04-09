@@ -9,11 +9,11 @@ export default function (doc) {
   }
 
   if (doc.type === 'homepage') {
-    return '/'
+    return `/${doc.lang}`
   }
 
   if (doc.type === 'page') {
-    return '/page/' + doc.uid
+    return `/${doc.lang}/${doc.uid}`
   }
 
   return '/not-found'
