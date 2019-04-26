@@ -1,6 +1,6 @@
 <template>
   <header class="site-header">
-    <nuxt-link to="/" class="logo">Example Site</nuxt-link>
+    <nuxt-link to="./" class="logo">Example Site</nuxt-link>
     <nav>
       <ul>
         <li v-for="menuLink in menuLinks" :key="menuLink.id">
