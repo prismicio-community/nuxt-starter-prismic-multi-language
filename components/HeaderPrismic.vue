@@ -1,13 +1,17 @@
 <template>
   <header class="site-header">
-    <nuxt-link to="./" class="logo">Example Site</nuxt-link>
+    <nuxt-link to="./" class="logo">
+      <img src="./../images/logo.png" alt="Facebook social icon" />
+    </nuxt-link>
     <nav>
       <ul>
         <li v-for="menuLink in menuLinks" :key="menuLink.id">
           <prismic-link :field="menuLink.link">{{ $prismic.richTextAsPlain(menuLink.label) }}</prismic-link>
         </li>
         <li v-for="altLang in altLangs" :key="altLang.id">
-          <nuxt-link :to="linkResolver(altLang)"><span :class="'flag-icon flag-icon-' + altLang.lang.slice(-2)"></span></nuxt-link>
+          <nuxt-link :to="linkResolver(altLang)">
+            <span :class="'flag-icon flag-icon-' + altLang.lang.slice(-2)"></span>
+          </nuxt-link>
         </li>
       </ul>
     </nav>
@@ -15,24 +19,25 @@
 </template>
 
 <script>
-import linkResolver from "~/plugins/link-resolver"
+import linkResolver from "~/plugins/link-resolver";
 
 export default {
-  props: ['menuLinks', 'altLangs'],
-  name: 'header-prismic',
-  data () {
+  props: ["menuLinks", "altLangs", "menuContent"],
+  name: "header-prismic",
+  data() {
     return {
       linkResolver
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="sass">
 .site-header
   height: 30px
-  padding: 20px 0
+  padding: 50px 0 40px;
   color: #484d52
+  max-width: 1080px
   font-weight: 700
   a
     color: #484d52
@@ -52,6 +57,11 @@ export default {
     display: inline-block
     font-size: 22px
     font-weight: 900
+    padding-bottom: 40px
+    img
+      margin-right: 4px
+      vertical-align: text-top
+      width: 70%;
   nav
     float: right
     ul
@@ -63,8 +73,8 @@ export default {
 
 @media (max-width: 1060px)
   .site-header
-    padding-left: 20px
-    padding-right: 20px
+    padding: 40px 60px;
+
 
 @media (max-width: 767px)
   .site-header
@@ -79,6 +89,8 @@ export default {
     .logo
       display: block
       text-align: center
+      img
+        width: 40%;
     nav
       float: none
       text-align: center
