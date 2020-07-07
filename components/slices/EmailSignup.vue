@@ -8,17 +8,13 @@
       <prismic-rich-text :field="slice.primary.input_label" />
       <input
         class="email-input"
-        v-model="name"
         type="text"
-        name="name"
-        :placeholder="[[ slice.primary.input_placeholder ]]"
+        :placeholder="[[ slice.primary.input_label ]]" 
       />
       <input
         class="btn"
-        v-model="submit"
         type="submit"
-        name="submit"
-        :placeholder="[[ slice.primary.button_text ]]"
+        :placeholder="'hey'"
       />
     </div>
   </section>
@@ -101,6 +97,9 @@ export default {
     margin-left: 165px
 
   .email-signup .form  /deep/ input
+    width: 390px !important
+
+  .email-signup .form  /deep/ button
     width: 390px !important
 </style>
 
