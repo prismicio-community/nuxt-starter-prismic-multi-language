@@ -1,12 +1,11 @@
 <template>
-  <section class="page">
+  <div>
     <!-- Vue tag to add header component -->
-    <header-prismic />
-    <!-- <header-prismic :menuLinks="menuLinks" :altLangs="altLangs"/> -->
+    <header-prismic :menuLinks="menuLinks" :altLangs="altLangs"/>
     <!-- Slices block component -->
     <slices-block :slices="slices" />
     <footer-prismic />
-  </section>
+  </div>
 </template>
 
 <script>
@@ -52,9 +51,9 @@ export default {
       document = result.data;
 
       // // Query to get the menu content
-      // let menuContent = {}
-      // const menu = await api.getSingle('menu', lang)
-      // menuContent = menu.data
+      let menuContent = {}
+      const menu = await api.getSingle('top_menu', lang)
+      menuContent = menu.data
 
       return {
         // Post content

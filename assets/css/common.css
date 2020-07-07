@@ -57,9 +57,12 @@ main section {
 /* Medium Devices, Desktops, Large Devices, Wide Screens */
 
 @media only screen and (min-width: 1100px) {
-  header,
   footer {
-    padding: 38px 7%;
+    padding: 38px 80px;
+  }
+
+  header {
+    padding: 50px 0 40px
   }
   main {
     max-width: 1080px;

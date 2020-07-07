@@ -1,32 +1,35 @@
 <template>
   <header class="site-header">
-    <nuxt-link to="./" class="logo">Example Site</nuxt-link>
+    <nuxt-link to="./" class="logo">
+      <img src="./../images/logo.png" alt="Facebook social icon" />
+    </nuxt-link>
     <nav>
       <ul>
-        <!-- {{ menuContent }} -->
-        <!-- <li v-for="menuLink in menuLinks" :key="menuLink.id">
+        <li v-for="menuLink in menuLinks" :key="menuLink.id">
           <prismic-link :field="menuLink.link">{{ $prismic.richTextAsPlain(menuLink.label) }}</prismic-link>
-        </li> -->
-        <!-- <li v-for="altLang in altLangs" :key="altLang.id">
-          <nuxt-link :to="linkResolver(altLang)"><span :class="'flag-icon flag-icon-' + altLang.lang.slice(-2)"></span></nuxt-link>
-        </li> -->
+        </li>
+        <li v-for="altLang in altLangs" :key="altLang.id">
+          <nuxt-link :to="linkResolver(altLang)">
+            <span :class="'flag-icon flag-icon-' + altLang.lang.slice(-2)"></span>
+          </nuxt-link>
+        </li>
       </ul>
     </nav>
   </header>
 </template>
 
 <script>
-import linkResolver from "~/plugins/link-resolver"
+import linkResolver from "~/plugins/link-resolver";
 
 export default {
-  props: ['menuLinks', 'altLangs', 'menuContent'],
-  name: 'header-prismic',
-  data () {
+  props: ["menuLinks", "altLangs", "menuContent"],
+  name: "header-prismic",
+  data() {
     return {
       linkResolver
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="sass">
@@ -34,6 +37,7 @@ export default {
   height: 30px
   padding: 20px 0
   color: #484d52
+  max-width: 1080px
   font-weight: 700
   a
     color: #484d52
@@ -53,6 +57,11 @@ export default {
     display: inline-block
     font-size: 22px
     font-weight: 900
+    padding-bottom: 40px
+    img
+      margin-right: 4px
+      vertical-align: text-top
+      width: 70%;
   nav
     float: right
     ul
@@ -80,6 +89,8 @@ export default {
     .logo
       display: block
       text-align: center
+      img
+        width: 75%;
     nav
       float: none
       text-align: center

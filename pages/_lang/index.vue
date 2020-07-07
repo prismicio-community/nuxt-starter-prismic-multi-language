@@ -1,8 +1,7 @@
 <template>
   <div>
     <!-- Vue tag to add header component -->
-    <header-prismic />
-    <!-- <header-prismic :menuLinks="menuLinks" :altLangs="altLangs"/> -->
+    <header-prismic :menuLinks="menuLinks" :altLangs="altLangs"/>
     <!-- Slices block component -->
     <slices-block :slices="slices" />
     <footer-prismic />
@@ -51,20 +50,19 @@ export default {
       document = result.data;
 
       // // Query to get the menu content
-      // let menuContent = {}
-      // const menu = (await api.getSingle('menu', lang))
-      // menuContent = menu.data
+      let menuContent = {}
+      const menu = (await api.getSingle('top_menu', lang))
+      menuContent = menu.data
 
       return {
         // Page content
         document,
         // Set slices as variable
-        slices: document.body
+        slices: document.body,
 
         // // Menu
-        // altLangs: result.alternate_languages,
-        // menuContent,
-        // menuLinks: menuContent.menu_links
+        altLangs: result.alternate_languages,
+        menuLinks: menuContent.menu_links
       };
     } catch (e) {
       error({ statusCode: 404, message: "Page not found" });
@@ -109,6 +107,9 @@ export default {
       max-width: 1080px
       margin: auto
 
-    header, footer
+    footer
       padding: 38px 7%
+
+    header
+      padding: 60px 0 40px
 </style>
