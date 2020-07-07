@@ -35,7 +35,7 @@ export default {
 <style lang="sass">
 .site-header
   height: 30px
-  padding: 20px 0
+  padding: 50px 0 40px;
   color: #484d52
   max-width: 1080px
   font-weight: 700
@@ -73,8 +73,8 @@ export default {
 
 @media (max-width: 1060px)
   .site-header
-    padding-left: 20px
-    padding-right: 20px
+    padding: 40px 60px;
+
 
 @media (max-width: 767px)
   .site-header
@@ -90,7 +90,7 @@ export default {
       display: block
       text-align: center
       img
-        width: 75%;
+        width: 40%;
     nav
       float: none
       text-align: center
