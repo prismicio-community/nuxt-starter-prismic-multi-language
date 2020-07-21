@@ -48,7 +48,7 @@ export default {
   ],
 
   prismic: {
-    endpoint: "https://multi-language-example.cdn.prismic.io/api/v2",
+    endpoint: "https://your-repo-name.cdn.prismic.io/api/v2",
     disableGenerator: false,
   },
 
@@ -64,7 +64,7 @@ export default {
       config.resolve.alias['vue'] = 'vue/dist/vue.common'
     }
   },
-  
+
   generate: {
     fallback: '404.html' // Netlify reads a 404.html, Nuxt will load as an SPA
   }
