@@ -1,71 +1,51 @@
 <template>
   <div>
-    <!-- Vue tag to add header component -->
     <header-prismic :menuLinks="menuLinks" :altLangs="altLangs"/>
     <!-- Slices block component -->
     <slices-block :slices="slices" />
-    <footer-prismic />
   </div>
 </template>
 
 <script>
-import Prismic from "prismic-javascript";
-import PrismicConfig from "~/prismic.config.js";
-// Imports for all components
 import HeaderPrismic from "~/components/HeaderPrismic.vue";
 import SlicesBlock from "~/components/SlicesBlock.vue";
-import FooterPrismic from "~/components/FooterPrismic.vue";
 
 export default {
   name: "page",
   components: {
     HeaderPrismic,
-    SlicesBlock,
-    FooterPrismic
+    SlicesBlock
   },
-
   head() {
     return {
       title: "Prismic Nuxt.js Multi Page Website"
     };
   },
-  async asyncData({ params, error, req }) {
+  async asyncData({ $prismic, params, error }) {
     try {
-      // // Fetching the API object
-      const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });
-
       // Languages from API response
-      let languages = api.data.languages;
+      let languages = $prismic.api.data.languages
 
       // Setting Master language as default language option
-      let lang = { lang: languages[0].id };
+      let lang = { lang: languages[0].id }
 
       // If there is a langauge code in the URL set this as language option
       if (params.lang !== undefined || null) {
-        lang = { lang: params.lang };
+        lang = { lang: params.lang }
       }
 
       // Query to get post content
-      let document = {};
-      const result = await api.getByUID("page", params.uid, lang);
-      document = result.data;
+      const result = await $prismic.api.getByUID('page', params.uid, lang)
 
-      // // Query to get the menu content
-      let menuContent = {}
-      const menu = await api.getSingle('top_menu', lang)
-      menuContent = menu.data
+      const menuContent = (await $prismic.api.getSingle('top_menu', lang )).data
 
       return {
-        // Post content
-        document,
-
-        // Set slices as variable
-        slices: document.body
+        // Page content, set slices as variable
+        slices: result.data.body,
 
         // Menu
-        // altLangs: result.alternate_languages,
-        // menuContent,
-        // menuLinks: menuContent.menu_links
+        menuLinks: menuContent.menu_links,
+        altLangs: result.alternate_languages
       };
     } catch (e) {
       // Returns error page

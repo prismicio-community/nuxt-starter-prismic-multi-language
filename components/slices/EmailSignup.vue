@@ -9,12 +9,12 @@
       <input
         class="email-input"
         type="text"
-        :placeholder="[[ slice.primary.input_label ]]" 
+        :placeholder="slice.primary.input_placeholder[0].text" 
       />
       <input
         class="btn"
         type="submit"
-        :placeholder="'hey'"
+        :value="slice.primary.button_text[0].text"
       />
     </div>
   </section>

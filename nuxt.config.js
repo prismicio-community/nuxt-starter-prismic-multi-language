@@ -1,9 +1,8 @@
 const pkg = require('./package')
-const PrismicConfig = require('./prismic.config')
 
-module.exports = {
+export default {
   mode: 'universal',
-
+  target: 'static',
   /*
   ** Headers of the page
   */
@@ -20,12 +19,7 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css'}
-    ],
-    script: [
-      { innerHTML: '{ window.prismic = { endpoint: "' + PrismicConfig.apiEndpoint + '"} }' },
-      { src: '//static.cdn.prismic.io/prismic.min.js' }
-    ],
-    __dangerouslyDisableSanitizers: ['script'],
+    ]
   },
 
   /*
@@ -45,16 +39,18 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/link-resolver.js',
-    '~/plugins/html-serializer.js',
-    '~/plugins/prismic-vue.js',
   ],
-
   /*
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/prismic'
   ],
+
+  prismic: {
+    endpoint: "https://multi-language-example.cdn.prismic.io/api/v2",
+    disableGenerator: false,
+  },
 
   /*
   ** Build configuration
@@ -64,7 +60,12 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
+      // to transform link with <nuxt-link> for the htmlSerializer
       config.resolve.alias['vue'] = 'vue/dist/vue.common'
     }
+  },
+  
+  generate: {
+    fallback: '404.html' // Netlify reads a 404.html, Nuxt will load as an SPA
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <section class="text-info">
     <div class="left-column">
-      <img src="./../../images/top-icon.png" />
+      <prismic-image :field="slice.primary.top_icon"/>
       <prismic-rich-text :field="slice.primary.section_title" />
       <prismic-rich-text :field="slice.primary.left_column_text" />
     </div>

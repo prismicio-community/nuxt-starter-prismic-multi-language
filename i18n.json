@@ -1,7 +1,0 @@
-{
-  "languages": [
-    {"key": "fr-fr", "label": "Francais"},
-    {"key": "en-gb", "label": "English"}
-  ],
-  "default": "en-gb"
-}

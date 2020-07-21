@@ -3,7 +3,7 @@
     <div class="main-img">
       <prismic-image :field="slice.primary.image" />
     </div>
-    <div class="background" v-bind:class="[slice.primary.background_image_position]">
+    <div class="background" :class="slice.primary.background_image_position">
       <img src="./../../images/full-width-image-background.png" />
     </div>
   </section>
@@ -13,15 +13,7 @@
 import backgroundImage from "../../images/full-width-image-background.png";
 
 export default {
-  data() {
-    return {
-      fields: {
-        illustration: null
-      }
-    };
-  },
   props: ["slice"],
-  // theme: slice.primary.background_image_position,
   name: "full-width-image"
 };
 </script>

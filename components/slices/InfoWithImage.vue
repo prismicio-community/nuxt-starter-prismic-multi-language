@@ -3,20 +3,20 @@
     <div class="featured-image">
       <picture>
         <source
-          :srcSet="featuredImage.mobile.url"
-          :alt="featuredImage.mobile.alt"
+          :srcSet="slice.primary.featured_image.mobile.url"
+          :alt="slice.primary.featured_image.mobile.alt"
           media="max-width: 500px"
         />
         <source
-          :srcSet="featuredImage.tablet.url"
-          :alt="featuredImage.tablet.alt"
+          :srcSet="slice.primary.featured_image.tablet.url"
+          :alt="slice.primary.featured_image.tablet.alt"
           media="max-width: 1100px"
         />
-        <img :src="featuredImage.url" :alt="featuredImage.alt" />
+        <img :src="slice.primary.featured_image.url" :alt="slice.primary.featured_image.alt" />
       </picture>
     </div>
     <div class="text-content">
-      <img :src="topIcon" alt="Checkbox icon" />
+      <prismic-image :field="slice.primary.top_icon" alt="Checkbox icon" />
       <prismic-rich-text :field="slice.primary.section_title" />
       <prismic-rich-text :field="slice.primary.text" />
     </div>

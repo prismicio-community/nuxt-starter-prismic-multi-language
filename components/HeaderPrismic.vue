@@ -6,10 +6,10 @@
     <nav>
       <ul>
         <li v-for="menuLink in menuLinks" :key="menuLink.id">
-          <prismic-link :field="menuLink.link">{{ $prismic.richTextAsPlain(menuLink.label) }}</prismic-link>
+          <prismic-link :field="menuLink.link">{{ $prismic.asText(menuLink.label) }}</prismic-link>
         </li>
         <li v-for="altLang in altLangs" :key="altLang.id">
-          <nuxt-link :to="linkResolver(altLang)">
+          <nuxt-link :to="$prismic.linkResolver(altLang)">
             <span :class="'flag-icon flag-icon-' + altLang.lang.slice(-2)"></span>
           </nuxt-link>
         </li>
@@ -19,16 +19,10 @@
 </template>
 
 <script>
-import linkResolver from "~/plugins/link-resolver";
 
 export default {
-  props: ["menuLinks", "altLangs", "menuContent"],
-  name: "header-prismic",
-  data() {
-    return {
-      linkResolver
-    };
-  }
+  props: ["altLangs", "menuLinks"],
+  name: "header-prismic"
 };
 </script>
 
