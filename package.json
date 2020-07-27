@@ -15,9 +15,7 @@
   "dependencies": {
     "@nuxtjs/prismic": "^1.2.3",
     "cookies": "^0.8.0",
-    "nuxt": "^2.13.3",
-    "prismic-dom": "^2.2.3",
-    "prismic-javascript": "^3.0.1"
+    "nuxt": "^2.13.3"
   },
   "devDependencies": {
     "node-sass": "^4.14.1",
