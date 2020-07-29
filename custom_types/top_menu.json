@@ -1,10 +1,10 @@
 {
   "Main" : {
-    "title" : {
+    "display_title" : {
       "type" : "StructuredText",
       "config" : {
-        "placeholder" : "Menu title...",
-        "single" : "heading1"
+        "single" : "heading1",
+        "label" : "display_title"
       }
     },
     "menu_links" : {
@@ -15,19 +15,18 @@
             "type" : "StructuredText",
             "config" : {
               "single" : "paragraph",
-              "label" : "Link Label",
-              "placeholder" : "Link Label..."
+              "label" : "label"
             }
           },
           "link" : {
             "type" : "Link",
             "config" : {
-              "label" : "Link",
+              "label" : "link",
               "placeholder" : "Select a Link..."
             }
           }
         },
-        "label" : "Menu Links"
+        "label" : "menu_links"
       }
     }
   }
