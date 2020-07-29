@@ -48,7 +48,7 @@ export default {
   ],
 
   prismic: {
-    endpoint: "https://multi-language-example.cdn.prismic.io/api/v2",
+    endpoint: "https://your-repo-name.cdn.prismic.io/api/v2",
     disableGenerator: false,
   },
 
