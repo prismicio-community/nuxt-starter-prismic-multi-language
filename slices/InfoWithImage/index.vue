@@ -12,11 +12,13 @@
           :alt="slice.primary.featured_image.tablet.alt"
           media="max-width: 1100px"
         />
-        <img :src="slice.primary.featured_image.url" :alt="slice.primary.featured_image.alt" />
+        <img
+          :src="slice.primary.featured_image.url"
+          :alt="slice.primary.featured_image.alt"
+        />
       </picture>
     </div>
     <div class="text-content">
-      <prismic-image :field="slice.primary.top_icon" alt="Checkbox icon" />
       <prismic-rich-text :field="slice.primary.section_title" />
       <prismic-rich-text :field="slice.primary.text" />
     </div>
@@ -26,7 +28,7 @@
 <script>
 export default {
   props: ["slice"],
-  name: "info-with-image"
+  name: "info-with-image",
 };
 </script>
 
@@ -75,4 +77,3 @@ export default {
   .info-with-image .featured-image img
     width: 516px
 </style>
-

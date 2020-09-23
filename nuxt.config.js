@@ -85,7 +85,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/prismic", ["@nuxtjs/prismic"], ["nuxt-sm"]],
+  modules: ["@nuxtjs/prismic", ["nuxt-sm"]],
   prismic: {
     endpoint: "https://your-repo-name.cdn.prismic.io/api/v2",
     disableGenerator: false,
