@@ -3,7 +3,15 @@
     <!-- Vue tag to add header component -->
     <header-prismic :menuLinks="menuLinks" :altLangs="altLangs" />
     <!-- Slice Zone handle API query for body content -->
-    <slice-zone :lang="$route.params.lang" queryType="single" type="homepage" />
+    <main>
+      <div>
+        <slice-zone
+          :lang="$route.params.lang"
+          queryType="single"
+          type="homepage"
+        />
+      </div>
+    </main>
   </div>
 </template>
 
@@ -35,6 +43,9 @@ export default {
       if (params.lang !== undefined || null) {
         lang = { lang: params.lang };
       }
+
+      // Query to get alt languages
+      const result = await $prismic.api.getSingle("homepage", lang);
 
       // Query to get menu content
       const menuContent = (await $prismic.api.getSingle("top_menu", lang)).data;
