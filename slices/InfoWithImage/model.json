@@ -1,0 +1,47 @@
+{
+  "type": "Slice",
+  "fieldset": "Info with image",
+  "description": "Text section with featured image",
+  "icon": "art_track",
+  "display": "list",
+  "non-repeat": {
+    "featured_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 600,
+          "height": 690
+        },
+        "thumbnails": [
+          {
+            "name": "tablet",
+            "width": 800,
+            "height": 400
+          },
+          {
+            "name": "mobile",
+            "width": 400,
+            "height": 300
+          }
+        ],
+        "label": "featured_image"
+      }
+    },
+    "section_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2",
+        "label": "section_title"
+      }
+    },
+    "text": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, heading3, strong, em, hyperlink, list-item, o-list-item",
+        "allowTargetBlank": true,
+        "label": "text"
+      }
+    }
+  },
+  "repeat": {}
+}

@@ -1,0 +1,29 @@
+{
+  "type": "Slice",
+  "fieldset": "Full width image",
+  "description": "Full page width featured image",
+  "icon": "image",
+  "display": "list",
+  "non-repeat": {
+    "background_image_position": {
+      "type": "Select",
+      "config": {
+        "options": ["Left", "Right"],
+        "default_value": "Left",
+        "label": "background_image_position"
+      }
+    },
+    "image": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 1080,
+          "height": 580
+        },
+        "thumbnails": [],
+        "label": "image"
+      }
+    }
+  },
+  "repeat": {}
+}

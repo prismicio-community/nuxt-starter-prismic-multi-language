@@ -1,0 +1,36 @@
+{
+  "type": "Slice",
+  "fieldset": "Headline with button",
+  "description": "Headline & description with button",
+  "icon": "library_books",
+  "display": "list",
+  "non-repeat": {
+    "headline": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2",
+        "label": "headline"
+      }
+    },
+    "description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, strong, em, hyperlink, list-item, o-list-item",
+        "allowTargetBlank": true,
+        "label": "description"
+      }
+    },
+    "button": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 235,
+          "height": 75
+        },
+        "thumbnails": [],
+        "label": "button"
+      }
+    }
+  },
+  "repeat": {}
+}

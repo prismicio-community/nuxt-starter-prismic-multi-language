@@ -1,0 +1,33 @@
+{
+  "type": "Slice",
+  "fieldset": "Text info",
+  "description": "2 column text section",
+  "icon": "subject",
+  "display": "list",
+  "non-repeat": {
+    "section_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2",
+        "label": "section_title"
+      }
+    },
+    "left_column_text": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, heading3, strong, em, hyperlink, list-item, o-list-item",
+        "allowTargetBlank": true,
+        "label": "left_column_text"
+      }
+    },
+    "right_column_text": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, heading3, strong, em, hyperlink, list-item, o-list-item",
+        "allowTargetBlank": true,
+        "label": "right_column_text"
+      }
+    }
+  },
+  "repeat": {}
+}
