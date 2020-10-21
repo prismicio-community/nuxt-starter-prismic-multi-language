@@ -1,7 +1,6 @@
 <template>
   <section class="text-info">
     <div class="left-column">
-      <prismic-image :field="slice.primary.top_icon"/>
       <prismic-rich-text :field="slice.primary.section_title" />
       <prismic-rich-text :field="slice.primary.left_column_text" />
     </div>
@@ -12,10 +11,9 @@
 </template>
 
 <script>
-
 export default {
   props: ["slice"],
-  name: "text-info",
+  name: "text-info"
 };
 </script>
 
@@ -76,4 +74,3 @@ export default {
   .text-info .right-column
     margin-left: 135px
 </style>
-
