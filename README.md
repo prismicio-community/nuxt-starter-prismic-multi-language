@@ -1,37 +1,38 @@
-# Prismic Nuxt.js Multi-page website example
+# Prismic Nuxt.js Multi-language website example
 
 > [Nuxt.js](https://nuxtjs.org) example blog project with content managed in [Prismic](https://prismic.io)
 
 ## Check out our article for a step by step guide to getting this project up and running
 
-> [Prismic project guide](https://prismic.io/docs/vuejs/getting-started/primsic-nuxt)
+> [Prismic project guide](https://user-guides.prismic.io/en/articles/2929806-multi-language-website-with-nuxt-and-prismic)
 
 Then you can access it at [http://localhost:3000](http://localhost:3000).
-
 
 ## How to launch this project in your local environment
 
 Run the following commands:
 
-``` bash
+```bash
 npm install
 npm run dev
 ```
 
 ### Compiles and minifies for production and launches server
-``` bash
+
+```bash
 npm run build
 npm start
 ```
 
 ### generates static project
-``` bash
+
+```bash
 nuxt generate
 ```
 
 ## Learn more about using Prismic with Nuxt.js
 
-> [Prismic Nuxt.js Documentation](https://prismic.io/docs/vuejs/beyond-the-api/primsic-nuxt)
+> [Prismic Nuxt.js Documentation](https://prismic.io/docs/technologies/using-prismic-with-nuxtjs-vuejs)
 
 ## License
 
