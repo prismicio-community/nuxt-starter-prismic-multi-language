@@ -1,9 +1,7 @@
 {
-  "name": "language-switcher-nuxt",
-  "version": "1.0.0",
-  "description": "A website with a language switcher menu built for Nuxt and Prismic",
-  "author": "Phil Snow",
-  "private": true,
+  "name": "nuxt-multi-language-website",
+  "description": "Multi-language website example with Next.js using Prismic headless CMS",
+  "author": "Prismic",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
