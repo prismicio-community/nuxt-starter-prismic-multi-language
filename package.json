@@ -21,5 +21,9 @@
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
     "sass-loader": "^9.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prismicio/nuxt-multi-language-site"
   }
 }
