@@ -25,6 +25,8 @@ prismic theme --theme-url https://github.com/prismicio/nuxt-multi-language-site 
 ```
 npm run dev
 ```
+### Deploys made easy with Netlify
+Sign up to [Netlify](https://www.netlify.com/) and follow the [deployment documentation](https://www.netlify.com/tags/deploy/) to quickly deploy your project.
 ## Learn more about using Prismic with Nuxt.js
 
 > [Prismic + Nuxt.js Documentation](https://prismic.io/docs/technologies/nuxtjs)
