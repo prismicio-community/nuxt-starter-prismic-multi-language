@@ -1,36 +1,12 @@
-# Prismic & NuxtJS Multi-language website example
+# Prismic & Nuxt.js Multi-language website example
 
-> [NuxtJS](https://nuxtjs.org) example Multi-language website with content managed in [Prismic](https://prismic.io)
+> [Nuxt.js](https://nuxtjs.org) example Multi-language website with content managed in [Prismic](https://prismic.io)
 
 ## Check out the dedicated article to get this project up and running
 
 > [Prismic project guide](https://intercom.help/prismicio/en/articles/2929806-multi-language-website-with-nuxt-and-prismic)
 
-Then you can access it at [http://localhost:3000](http://localhost:3000).
-
-
-### Install the prismic-cli
-```
-npm install -g prismic-cli
-```
-
-### 2. Run the theme command
-
-```
-prismic theme --theme-url https://github.com/prismicio/nuxt-multi-language-site --conf nuxt.config.js
-
-```
-
-### 3. Run the project
-```
-npm run dev
-```
-Then you can access it at http://localhost:3000.
-
-### Deploys made easy with Netlify
-Sign up to [Netlify](https://www.netlify.com/) and follow the [deployment documentation](https://www.netlify.com/tags/deploy/) to quickly deploy your project.
 ## Learn more about using Prismic with Nuxt.js
-
 > [Prismic + Nuxt.js Documentation](https://prismic.io/docs/technologies/nuxtjs)
 
 ## License
