@@ -9,7 +9,7 @@
       <input
         class="email-input"
         type="text"
-        :placeholder="slice.primary.input_placeholder[0].text" 
+        :placeholder="slice.primary.input_placeholder[0].text"
       />
       <input
         class="btn"
@@ -38,7 +38,7 @@ export default {
   flex-direction: column
   align-items: center
 
-.email-signup .description /deep/ p
+.email-signup .description::v-deep p
   max-width: 723px
   line-height: 40px
   font-size: 23px
@@ -52,14 +52,14 @@ export default {
   padding-left: 0
   font-weight: 900
 
-.email-signup .form /deep/ p
+.email-signup .form::v-deep p
   margin: 1rem 0 0rem
   line-height: 1.5
   font-size: 1rem
   font-weight: 500
   text-align: left
 
-.email-signup .form /deep/ .email-input
+.email-signup .form::v-deep .email-input
   box-sizing: border-box
   margin-top: 10px
   padding: 10px 20px
@@ -72,7 +72,7 @@ export default {
   height: 60px
   margin: 4px 0
 
-.email-signup .form /deep/ .btn
+.email-signup .form::v-deep .btn
   color: white
   background-color: black
   width: 100%
@@ -88,7 +88,7 @@ export default {
   .email-signup .description
     align-items: baseline
 
-  .email-signup .description /deep/ p
+  .email-signup .description::v-deep p
     text-align: left
 
   .email-signup .form
@@ -96,10 +96,10 @@ export default {
     flex-direction: column
     margin-left: 165px
 
-  .email-signup .form  /deep/ input
+  .email-signup .form::v-deep input
     width: 390px !important
 
-  .email-signup .form  /deep/ button
+  .email-signup .form::v-deep button
     width: 390px !important
 </style>
 

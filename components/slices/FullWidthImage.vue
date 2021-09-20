@@ -55,7 +55,7 @@ export default {
       display: flex
       justify-self: end
       right: -100px
-  .background &.right-bg img
+  .background .right-bg img
     transform: scaleX(-1)
 
 
