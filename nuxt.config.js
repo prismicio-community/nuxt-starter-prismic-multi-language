@@ -57,7 +57,7 @@ export default {
   modules: ["@nuxtjs/prismic"],
 
   prismic: {
-    endpoint: "https://multilanguage-examples.cdn.prismic.io/api/v2",
+    endpoint: "https://your-repo-name.cdn.prismic.io/api/v2",
     disableGenerator: false,
   },
 
