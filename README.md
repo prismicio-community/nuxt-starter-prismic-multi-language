@@ -4,7 +4,7 @@
 
 ## Check out the dedicated article to get this project up and running
 
-> [Prismic project guide](https://intercom.help/prismicio/en/articles/2929806-multi-language-website-with-nuxt-and-prismic)
+> [Prismic project guide](https://prismic.io/docs/technologies/getting-started-examples-simple-nuxtjs)
 
 ## Learn more about using Prismic with Nuxt.js
 > [Prismic + Nuxt.js Documentation](https://prismic.io/docs/technologies/nuxtjs)

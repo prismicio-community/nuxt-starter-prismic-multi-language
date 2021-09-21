@@ -25,18 +25,18 @@ export default {
   align-items: center
   text-align: center
 
-.headline-with-button /deep/ h1
+.headline-with-button::v-deep h1
   line-height: 4rem
   font-size: 43px
 
-.headline-with-button /deep/ p
+.headline-with-button::v-deep p
   max-width: 691px
   margin-top: 20px
   line-height: 40px
   font-size: 23px
   font-weight: 500
 
-.headline-with-button /deep/ .button
+.headline-with-button::v-deep .button
   display: flex
   align-self: center
   padding-top: 20px
@@ -48,17 +48,17 @@ export default {
     padding-top: 40px
     text-align: inherit
 
-  .headline-with-button /deep/ h1
+  .headline-with-button::v-deep h1
     max-width: 645px
     line-height: inherit
     font-size: 100px
     letter-spacing: 0
     font-weight: 600
 
-  .headline-with-button /deep/ p
+  .headline-with-button::v-deep p
     max-width: 617px
 
-  .headline-with-button /deep/ .button
+  .headline-with-button::v-deep .button
     display: flex
     align-self: flex-end
     justify-content: flex-end

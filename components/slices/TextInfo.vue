@@ -18,37 +18,37 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.text-info .left-column /deep/ h1
+.text-info .left-column::v-deep h1
   max-width: 415px
   margin: 30px 0px 20px 0px
 
-.text-info .left-column /deep/ h2
+.text-info .left-column::v-deep h2
   max-width: 415px
   margin: 30px 0px 20px 0px
 
-.text-info .left-column /deep/ p
+.text-info .left-column::v-deep p
   max-width: 1075px
   line-height: 40px
   font-size: 23px
   font-weight: 500
 
-.text-info .right-column /deep/ h3
+.text-info .right-column::v-deep h3
   font-size: 20px
   line-height: 36px
 
-.text-info .left-column /deep/ h3
+.text-info .left-column::v-deep h3
   font-size: 20px
   line-height: 36px
 
 
-.text-info .right-column /deep/ p
+.text-info .right-column::v-deep p
   max-width: 1075px
   margin: 10px 0 20px
   line-height: 30px
   font-size: 16px
   font-weight: 400
 
-.text-info .left-column /deep/ p
+.text-info .left-column::v-deep p
   max-width: 1075px
   margin: 10px 0 20px
   line-height: 30px
@@ -63,11 +63,11 @@ export default {
     display: flex
     flex-direction: row
 
-  .text-info .right-column /deep/ h3
+  .text-info .right-column::v-deep h3
     font-size: 20px
     line-height: 36px
 
-  .text-info .left-column /deep/ h3
+  .text-info .left-column::v-deep h3
     font-size: 20px
     line-height: 36px
 
