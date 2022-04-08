@@ -1,79 +1,74 @@
-const pkg = require("./package");
+import Prismic from "@prismicio/client";
 
-export default {
-  target: "static",
-  /*
-   ** Headers of the page
-   */
-  head: {
-    title: pkg.name,
-    meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: pkg.description },
-    ],
-    link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.png" },
-      {
-        rel: "stylesheet",
-        href:
-          "https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic",
+import sm from "./sm.json";
+
+export default async () => {
+  const client = await Prismic.getApi(sm.apiEndpoint);
+
+  const locales = client.languages.map((lang) => lang.id);
+
+  return {
+    // Target: https://go.nuxtjs.dev/config-target
+    target: "static",
+
+    // Global page headers: https://go.nuxtjs.dev/config-head
+    head: {
+      title: "Prismic + Nuxt blog example",
+      htmlAttrs: {
+        lang: "en",
       },
-      {
-        rel: "stylesheet",
-        href:
-          "https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic",
-      },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/icon?family=Material+Icons",
-      },
-      {
-        rel: "stylesheet",
-        href:
-          "https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css",
-      },
-    ],
-  },
-
-  /*
-   ** Customize the progress-bar color
-   */
-  loading: { color: "#fff" },
-
-  /*
-   ** Global CSS
-   */
-  css: ["@/assets/css/resetr.css", "@/assets/css/common.css"],
-
-  /*
-   ** Plugins to load before mounting the App
-   */
-  plugins: [{ src: "~/plugins/prismicLinks", ssr: false }],
-  /*
-   ** Nuxt.js modules
-   */
-  modules: ["@nuxtjs/prismic"],
-
-  prismic: {
-    endpoint: "https://your-repo-name.cdn.prismic.io/api/v2",
-    disableGenerator: false,
-  },
-
-  /*
-   ** Build configuration
-   */
-  build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {
-      // to transform link with <nuxt-link> for the htmlSerializer
-      config.resolve.alias["vue"] = "vue/dist/vue.common";
+      meta: [
+        { charset: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        {
+          hid: "description",
+          name: "description",
+          content: "Prismic + Nuxt blog example",
+        },
+        { name: "format-detection", content: "telephone=no" },
+      ],
+      link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
     },
-  },
 
-  generate: {
-    fallback: "404.html", // Netlify reads a 404.html, Nuxt will load as an SPA
-  },
+    // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+    buildModules: ["@nuxt/postcss8", "@nuxtjs/prismic"],
+
+    // Modules: https://go.nuxtjs.dev/config-modules
+    modules: ["@nuxtjs/i18n"],
+
+    build: {
+      postcss: {
+        plugins: {
+          tailwindcss: {},
+          autoprefixer: {},
+        },
+      },
+      transpile: ["@prismicio/vue"],
+    },
+
+    // Global CSS: https://go.nuxtjs.dev/config-css
+    css: [
+      "@/styles/global.css",
+      "@fontsource/inter/400.css",
+      "@fontsource/inter/700.css",
+      "flag-icons/css/flag-icons.css",
+    ],
+
+    // Auto import components: https://go.nuxtjs.dev/config-components
+    components: true,
+
+    i18n: {
+      locales,
+      defaultLocale: locales[0],
+      parsePages: false,
+      pages: {
+        preview: false,
+      },
+    },
+
+    prismic: {
+      endpoint: sm.apiEndpoint,
+      modern: true,
+    },
+  };
 };

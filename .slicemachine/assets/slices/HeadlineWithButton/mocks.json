@@ -1,0 +1,34 @@
+[
+  {
+    "variation": "default-slice",
+    "name": "Default slice",
+    "slice_type": "HeadlineWithButton",
+    "items": [],
+    "primary": {
+      "headline": [
+        {
+          "type": "heading1",
+          "text": "Envisioneer magnetic bandwidth",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Consequat aliqua labore ut ipsum ad occaecat ipsum pariatur voluptate irure ipsum tempor eiusmod. Officia qui cupidatat voluptate quis exercitation dolor ullamco labore nostrud irure pariatur.",
+          "spans": []
+        }
+      ],
+      "button": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": "Placeholder image",
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43?w=900&h=500&fit=crop"
+      }
+    }
+  }
+]
+

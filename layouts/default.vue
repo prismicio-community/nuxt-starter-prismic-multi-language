@@ -1,21 +1,15 @@
 <template>
-  <div>
+  <div class="antialiased">
     <nuxt />
-    <footer-prismic />
   </div>
 </template>
 
 <script>
-import FooterPrismic from "~/components/FooterPrismic";
-
 export default {
-  components: {
-    FooterPrismic
-  },
   head() {
     return {
-      title: "Prismic Nuxt.js Multi Page Website"
+      title: "Multi-language site",
     };
-  }
+  },
 };
 </script>

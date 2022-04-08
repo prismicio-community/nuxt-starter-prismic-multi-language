@@ -1,0 +1,21 @@
+{
+  "slices": {
+    "EmailSignup": {
+      "DefaultSlice": {
+        "primary": {}
+      }
+    },
+    "TextInfo": {
+      "default-slice": {
+        "primary": {
+          "rightColumnText": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}
