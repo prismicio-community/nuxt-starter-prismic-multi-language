@@ -22,5 +22,10 @@ export default {
       menu,
     };
   },
+  head() {
+    return {
+      title: this.$prismic.asText(this.home.data.displayTitle),
+    };
+  },
 };
 </script>
