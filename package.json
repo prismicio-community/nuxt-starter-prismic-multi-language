@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-starter-prismic-blog",
+  "name": "nuxt-starter-prismic-multi-language",
   "private": "true",
   "scripts": {
     "dev": "concurrently \"npm:nuxt:dev\" \"npm:slicemachine\" --names \"nuxt,slicemachine\" --prefix-colors green,magenta",
