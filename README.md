@@ -7,7 +7,7 @@ Want to see an example of a multi-language [Nuxt][nuxt] website using [Prismic][
 
 &nbsp;
 
-<img src="https://user-images.githubusercontent.com/8601064/162551854-c1eb0a14-ed99-4b55-b25f-f8587d54c381.png" alt="Screenshots of the site seen on deskop and mobile browsers" />
+<img src="https://user-images.githubusercontent.com/8601064/163303418-e72d7138-1bbd-4e2c-bc26-d8674a464438.png" alt="Screenshots of the site seen on deskop and mobile browsers" />
 
 &nbsp;
 
