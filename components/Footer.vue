@@ -1,22 +1,21 @@
 <template>
-  <footer class="border-t border-neutral-300 bg-white bg-white px-6 py-8">
-    <div class="mx-auto grid max-w-5xl gap-4 md:grid-cols-2">
-      <p class="text-center text-lg italic md:text-left">
-        © 2020 Todoapp-Powered by Prismic
-      </p>
-      <div class="grid grid-flow-col justify-center gap-8 md:justify-end">
-        <img
-          src="/images/facebook.png"
-          alt="Facebook social icon"
-          class="w-5"
-        />
-        <img
-          src="/images/instagram.png"
-          alt="Instagram social icon"
-          class="w-5"
-        />
-        <img src="/images/twitter.png" alt="Twitter social icon" class="w-5" />
+  <Bounded as="footer" class="bg-gray-800 pb-12 text-slate-300 md:pb-12">
+    <div class="grid grid-cols-1 justify-items-center gap-20 md:gap-24">
+      <SignUpForm :settings="settings" />
+      <div class="mx-auto w-full max-w-3xl text-center text-xs font-semibold tracking-tight">
+        Proudly published using <a href="https://prismic.io" class="text-white">Prismic</a>
       </div>
     </div>
-  </footer>
+  </Bounded>
 </template>
+
+<script>
+export default {
+  props: {
+    settings: {
+      type: Object,
+      required: true
+    }
+  }
+}
+</script>

@@ -1,33 +1,40 @@
 {
   "name": "nuxt-starter-prismic-multi-language",
-  "private": "true",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "author": "Prismic <contact@prismic.io> (https://prismic.io)",
   "scripts": {
     "dev": "concurrently \"npm:nuxt:dev\" \"npm:slicemachine\" --names \"nuxt,slicemachine\" --prefix-colors green,magenta",
     "nuxt:dev": "nuxt",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "start": "nuxt start",
-    "format": "prettier --write .",
-    "slicemachine": "start-slicemachine"
+    "lint": "eslint --ext .js,.ts,.vue .",
+    "slicemachine": "start-slicemachine",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.7",
-    "@fontsource/lato": "^4.5.5",
     "@fontsource/libre-baskerville": "^4.5.5",
-    "@prismicio/slice-simulator-vue": "^0.2.0",
     "flag-icons": "^6.2.0",
     "nuxt": "^2.15.8"
   },
   "devDependencies": {
     "@nuxt/postcss8": "^1.1.3",
+    "@nuxtjs/eslint-config": "^9.0.0",
+    "@nuxtjs/eslint-module": "^3.1.0",
     "@nuxtjs/i18n": "^7.2.1",
-    "@nuxtjs/prismic": "^1.4.1",
+    "@nuxtjs/prismic": "^1.4.2",
+    "@prismicio/slice-simulator-vue": "^0.2.1",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
     "autoprefixer": "^10.4.4",
     "concurrently": "^7.1.0",
+    "eslint": "^8.13.0",
     "postcss": "^8.4.12",
     "prettier": "^2.6.2",
     "prettier-plugin-tailwindcss": "^0.1.8",
-    "slice-machine-ui": "^0.3.4",
-    "tailwindcss": "^3.0.23"
+    "slice-machine-ui": "^0.3.7",
+    "tailwindcss": "^3.0.24"
   }
 }

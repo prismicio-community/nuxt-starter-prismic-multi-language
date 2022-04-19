@@ -1,31 +1,26 @@
 <template>
-  <Layout :altLangs="home.alternate_languages" :menu="menu">
-    <SliceZone :slices="home.data.slices" :components="components" />
-  </Layout>
+  <SliceZone :slices="page.data.slices" :components="components" />
 </template>
 
 <script>
-import { components } from "~/slices";
+import { components } from '~/slices'
 
 export default {
-  data() {
-    return { components };
-  },
-  async asyncData({ $prismic, i18n }) {
-    const lang = i18n.locale;
-
-    const home = await $prismic.api.getSingle("homepage", { lang });
-    const menu = await $prismic.api.getSingle("menu", { lang });
-
+  async asyncData ({ $prismic, store, i18n }) {
+    const lang = i18n.locale
+    const page = await $prismic.api.getByUID('page', 'home', { lang })
+    await store.dispatch('prismic/load', { lang, page })
     return {
-      home,
-      menu,
-    };
+      page
+    }
   },
-  head() {
+  data () {
+    return { components }
+  },
+  head () {
     return {
-      title: this.$prismic.asText(this.home.data.displayTitle),
-    };
-  },
-};
+      title: this.$prismic.asText(this.page.data.title)
+    }
+  }
+}
 </script>
