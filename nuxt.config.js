@@ -76,9 +76,9 @@ export default async () => {
 
         switch (doc.type) {
           case 'page':
-            return doc.uid === 'home' ? `${prefix}/` : `${prefix}/${doc.uid}`
+            return doc.uid === 'home' ? prefix || '/' : `${prefix}/${doc.uid}`
           default:
-            return `${prefix}/`
+            return prefix || '/'
         }
       },
       htmlSerializer (type, element, content, children) {
