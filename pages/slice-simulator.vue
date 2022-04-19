@@ -5,18 +5,18 @@
 </template>
 
 <script>
-import { SliceSimulator } from "@prismicio/slice-simulator-vue";
-import { components } from "~/slices";
+import { SliceSimulator } from '@prismicio/slice-simulator-vue'
+import { components } from '~/slices'
 
-import state from "~~/.slicemachine/libraries-state.json";
+import state from '~~/.slicemachine/libraries-state.json'
 
 export default {
+  nuxtI18n: false,
   components: {
-    SliceSimulator,
+    SliceSimulator
   },
-  data() {
-    return { state, components };
-  },
-};
+  data () {
+    return { state, components }
+  }
+}
 </script>
-
