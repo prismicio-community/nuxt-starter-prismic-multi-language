@@ -63,6 +63,10 @@ export default async () => {
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
 
+    publicRuntimeConfig: {
+      development: process.env.NODE_ENV === 'development'
+    },
+
     i18n: {
       locales,
       defaultLocale
