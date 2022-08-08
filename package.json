@@ -15,7 +15,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@fontsource/inter": "^4.5.11",
+    "@fontsource/inter": "^4.5.12",
     "@fontsource/libre-baskerville": "^4.5.8",
     "flag-icons": "^6.6.4",
     "nuxt": "^2.15.8"
