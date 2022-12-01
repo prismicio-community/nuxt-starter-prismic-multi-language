@@ -45,7 +45,7 @@ export default async () => {
         css: {
           modules: false
         }
-      },  
+      },
       postcss: {
         plugins: {
           tailwindcss: {},
