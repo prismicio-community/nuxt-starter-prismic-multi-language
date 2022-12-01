@@ -40,6 +40,12 @@ export default async () => {
     ],
 
     build: {
+      // See: https://github.com/nuxt/postcss8/issues/24
+      loaders: {
+        css: {
+          modules: false
+        }
+      },  
       postcss: {
         plugins: {
           tailwindcss: {},
