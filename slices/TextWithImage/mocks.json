@@ -1,0 +1,50 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "text": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Massa sapien faucibus et molestie ac feugiat sed lectus. Dignissim cras tincidunt lobortis feugiat vivamus at augue. Pharetra pharetra massa massa ultricies.",
+              "spans": []
+            },
+            "direction": "ltr"
+          }
+        ]
+      },
+      "image": {
+        "origin": {
+          "id": "bKfkhVRAJTQ",
+          "url": "https://images.unsplash.com/photo-1638742385167-96fc60e12f59?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzc0NjN8MHwxfHNlYXJjaHwyOXx8Z3JhZGllbnR8ZW58MHx8fHwxNjcyOTM5MzI3&ixlib=rb-4.0.3&q=80",
+          "width": 5760,
+          "height": 3240
+        },
+        "url": "https://images.unsplash.com/photo-1638742385167-96fc60e12f59?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzc0NjN8MHwxfHNlYXJjaHwyOXx8Z3JhZGllbnR8ZW58MHx8fHwxNjcyOTM5MzI3&ixlib=rb-4.0.3&q=80",
+        "width": 5760,
+        "height": 3240,
+        "edit": {
+          "background": "transparent",
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "credits": null,
+        "alt": "A colorful gradient",
+        "__TYPE__": "ImageContent",
+        "thumbnails": {}
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]
