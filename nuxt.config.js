@@ -31,7 +31,7 @@ export default async () => {
     },
 
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-    buildModules: ['@nuxt/postcss8'],
+    buildModules: [],
 
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
@@ -47,9 +47,11 @@ export default async () => {
         }
       },
       postcss: {
-        plugins: {
-          tailwindcss: {},
-          autoprefixer: {}
+        postcssOptions: {
+          plugins: {
+            tailwindcss: {},
+            autoprefixer: {}
+          }
         }
       },
       transpile: ['@prismicio/vue']
