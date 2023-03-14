@@ -80,6 +80,7 @@ export default async () => {
 
     prismic: {
       endpoint: sm.apiEndpoint,
+      preview: '/api/preview',
       modern: true,
       linkResolver: (doc) => {
         const prefix = doc.lang === 'en-us' ? '' : `/${doc.lang}`
