@@ -8,8 +8,8 @@
         wrapper="div"
         class="max-w-2xl text-center leading-relaxed"
       />
-      <PrismicLink v-if="slice.primary.buttonLink" :field="slice.primary.buttonLink">
-        <PrismicImage :field="slice.primary.buttonImage" />
+      <PrismicLink v-if="slice.primary.buttonLink" :field="slice.primary.buttonLink" class="rounded bg-slate-800 px-7 py-3 font-bold text-white">
+        {{ slice.primary.buttonText }}
       </PrismicLink>
       <div v-if="slice.primary.image.url" class="w-full">
         <PrismicImage :field="slice.primary.image" />
