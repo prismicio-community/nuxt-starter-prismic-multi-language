@@ -1,9 +1,9 @@
 import Prismic from '@prismicio/client'
 
-import sm from './sm.json'
+import { repositoryName } from './slicemachine.config.json'
 
 export default async () => {
-  const client = await Prismic.getApi(sm.apiEndpoint)
+  const client = await Prismic.getApi(repositoryName)
   const locales = client.languages.map(lang => lang.id)
   const defaultLocale = locales[0]
 
@@ -81,7 +81,7 @@ export default async () => {
     },
 
     prismic: {
-      endpoint: sm.apiEndpoint,
+      endpoint: `https://${repositoryName}.cdn.prismic.io/api/v2`,
       preview: '/api/preview',
       modern: true,
       linkResolver: (doc) => {

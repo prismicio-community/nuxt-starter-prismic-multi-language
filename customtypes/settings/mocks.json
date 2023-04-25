@@ -1,0 +1,58 @@
+[
+  {
+    "siteTitle": {
+      "__TYPE__": "StructuredTextContent",
+      "value": [
+        {
+          "type": "heading1",
+          "content": {
+            "text": "Disappear"
+          }
+        }
+      ]
+    },
+    "logo": {
+      "__TYPE__": "ImageContent",
+      "origin": {
+        "id": "main",
+        "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055",
+        "width": 3277,
+        "height": 4092
+      },
+      "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055",
+      "width": 3277,
+      "height": 4092,
+      "edit": {
+        "zoom": 1,
+        "crop": {
+          "x": 0,
+          "y": 0
+        },
+        "background": "transparent"
+      },
+      "thumbnails": {}
+    },
+    "newsletterDescription": {
+      "__TYPE__": "StructuredTextContent",
+      "value": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Laboris esse labore incididunt tempor est magna cillum aliquip. Cillum mollit ut irure mollit."
+          }
+        }
+      ]
+    },
+    "newsletterDisclaimer": {
+      "__TYPE__": "StructuredTextContent",
+      "value": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Do ullamco ex id minim esse dolor laborum. Duis ipsum id incididunt consectetur ipsum dolore anim. Id deserunt elit quis in."
+          }
+        }
+      ]
+    }
+  }
+]
