@@ -1,4 +1,0 @@
-{
-	"//": "sm.json is deprecated, if you were importing values from this file please now import them from slicemachine.config.json, else you can safely delete this file",
-	"apiEndpoint": "https://nextjs-starter-prismic-multi-language.cdn.prismic.io/api/v2"
-}
