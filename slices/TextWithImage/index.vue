@@ -1,7 +1,5 @@
 <script setup lang="ts">
-// TODO: Migrate
-import { HTMLMapSerializer } from '@prismicio/helpers';
-import { Content } from '@prismicio/client'
+import { Content, HTMLRichTextMapSerializer } from '@prismicio/client'
 
 // The array passed to \`getSliceComponentProps\` is purely optional.
 // Consider it as a visual hint for you when templating your slice.
@@ -11,7 +9,7 @@ defineProps(getSliceComponentProps<Content.TextWithImageSlice>(
 
 const prismic = usePrismic()
 
-const serializer: HTMLMapSerializer = {
+const serializer: HTMLRichTextMapSerializer = {
   ...prismic.options.richTextSerializer,
   heading1: ({ children }) =>
     /* html */ `<h2 class="font-semibold tracking-tighter text-4xl md:text-6xl mb-8 last:mb-0">${children}</h2>`,

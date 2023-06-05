@@ -1,12 +1,11 @@
 <script setup lang="ts">
-// TODO: Migrate
-import { HTMLMapSerializer } from '@prismicio/helpers';
+import { HTMLRichTextMapSerializer } from '@prismicio/client';
 
 const settings = useSettings()
 
 const prismic = usePrismic()
 
-const serializer: HTMLMapSerializer = {
+const serializer: HTMLRichTextMapSerializer = {
   ...prismic.options.richTextSerializer,
   heading1: ({ children }) =>
     /* html */ `<h2 class="font-semibold tracking-tighter text-4xl md:text-6xl mb-4 text-white last:mb-0">${children}</h2>`,

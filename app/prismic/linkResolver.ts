@@ -1,5 +1,4 @@
-// TODO: Migrate
-import { LinkResolverFunction } from '@prismicio/helpers';
+import { LinkResolverFunction } from '@prismicio/client';
 
 const linkResolver: LinkResolverFunction = (doc) => {
   const prefix = doc.lang === 'en-us' ? '' : `/${doc.lang}`
