@@ -1,3 +1,19 @@
+<script setup lang="ts">
+import { HTMLRichTextMapSerializer } from '@prismicio/client';
+
+const settings = useSettings()
+
+const prismic = usePrismic()
+
+const serializer: HTMLRichTextMapSerializer = {
+  ...prismic.options.richTextSerializer,
+  heading1: ({ children }) =>
+    /* html */ `<h2 class="font-semibold tracking-tighter text-4xl md:text-6xl mb-4 text-white last:mb-0">${children}</h2>`,
+  paragraph: ({ children }) =>
+    /* html */ `<p class="mb-4 italic last:mb-0">${children}</p>`
+}
+</script>
+
 <template>
   <div class="px-4">
     <form
@@ -6,9 +22,9 @@
       class="grid w-full max-w-xl grid-cols-1 gap-6"
     >
       <PrismicRichText
-        v-if="$prismic.asText(settings.data.newsletterDescription)"
-        :field="settings.data.newsletterDescription"
-        :html-serializer="htmlSerializer"
+        v-if="$prismic.asText(settings?.data.newsletterDescription)"
+        :field="settings?.data.newsletterDescription"
+        :html-serializer="serializer"
         wrapper="div"
         class="text-center tracking-tight text-slate-300"
       />
@@ -33,37 +49,12 @@
           </button>
         </div>
         <PrismicText
-          v-if="$prismic.asText(settings.data.newsletterDisclaimer)"
+          v-if="$prismic.asText(settings?.data.newsletterDisclaimer)"
           class="text-center text-xs text-slate-400"
-          :field="settings.data.newsletterDisclaimer"
+          :field="settings?.data.newsletterDisclaimer"
           wrapper="p"
         />
       </div>
     </form>
   </div>
 </template>
-
-<script>
-export default {
-  props: {
-    settings: {
-      type: Object,
-      required: true
-    }
-  },
-  methods: {
-    htmlSerializer (type, element, content, children) {
-      switch (type) {
-        case 'heading1':
-          return /* html */ `<h2 class="font-semibold tracking-tighter text-4xl md:text-6xl mb-4 text-white last:mb-0">${children.join('')}</h2>`
-
-        case 'paragraph':
-          return /* html */ `<p class="mb-4 last:mb-0">${children.join('')}</p>`
-
-        default:
-          return this.$prismic?.htmlSerializer(type, element, content, children) ?? null
-      }
-    }
-  }
-}
-</script>

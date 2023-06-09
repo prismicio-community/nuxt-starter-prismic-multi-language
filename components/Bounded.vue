@@ -1,3 +1,20 @@
+<script setup lang="ts">
+defineProps({
+  as: {
+    type: [String, Object, Function],
+    default: 'div'
+  },
+  yPadding: {
+    type: String,
+    default: 'base'
+  },
+  collapsible: {
+    type: Boolean,
+    default: true
+  }
+})
+</script>
+
 <template>
   <Component
     :is="as"
@@ -13,22 +30,3 @@
     </div>
   </Component>
 </template>
-
-<script>
-export default {
-  props: {
-    as: {
-      type: [String, Object, Function],
-      default: 'div'
-    },
-    yPadding: {
-      type: String,
-      default: 'base'
-    },
-    collapsible: {
-      type: Boolean,
-      default: true
-    }
-  }
-}
-</script>
