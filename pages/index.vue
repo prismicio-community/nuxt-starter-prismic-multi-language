@@ -14,6 +14,12 @@ watch(page, () => {
 useHead({
   title: computed(() => prismic.asText(page.value?.data.title))
 })
+
+useSeoMeta({
+  ogTitle: page.value?.data.meta_title,
+  description: page.value?.data.meta_description,
+  ogImage: page.value?.data.meta_image.url,
+})
 </script>
 
 <template>
