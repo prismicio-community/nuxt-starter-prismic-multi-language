@@ -55,8 +55,7 @@ export default async () => {
             autoprefixer: {}
           }
         }
-      },
-      transpile: ['@prismicio/vue']
+      }
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
