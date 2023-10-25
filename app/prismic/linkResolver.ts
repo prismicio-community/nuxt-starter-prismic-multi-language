@@ -1,4 +1,4 @@
-import { LinkResolverFunction } from '@prismicio/client';
+import { type LinkResolverFunction } from '@prismicio/client';
 
 const linkResolver: LinkResolverFunction = (doc) => {
   const prefix = doc.lang === 'en-us' ? '' : `/${doc.lang}`

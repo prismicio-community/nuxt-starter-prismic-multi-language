@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type Content, HTMLRichTextMapSerializer } from '@prismicio/client'
+import { type Content, type HTMLRichTextMapSerializer } from '@prismicio/client'
 
 // The array passed to \`getSliceComponentProps\` is purely optional.
 // Consider it as a visual hint for you when templating your slice.
