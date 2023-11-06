@@ -3,11 +3,11 @@ import { components } from '~/slices'
 
 const { locale } = useI18n()
 const prismic = usePrismic()
-const { data: page } = useAsyncData('index', () =>
+const { data: page } = useAsyncData(`${locale}/index`, () =>
   prismic.client.getByUID('page', 'home', { lang: locale.value }), { watch: [locale] }
 )
 
-watch(page, () => {
+watch(() => page.value?.alternate_languages, () => {
   useAlternateLanguages().value = page.value?.alternate_languages || []
 }, { immediate: true })
 
