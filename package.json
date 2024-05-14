@@ -15,21 +15,21 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@fontsource/inter": "^5.0.17",
-    "@fontsource/libre-baskerville": "^5.0.12",
-    "flag-icons": "^7.2.0"
+    "@fontsource/inter": "^5.0.18",
+    "@fontsource/libre-baskerville": "^5.0.13",
+    "flag-icons": "^7.2.1"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^1.1.4",
+    "@nuxt/devtools": "^1.3.1",
     "@nuxt/eslint-config": "^0.2.0",
     "@nuxtjs/i18n": "next",
-    "@nuxtjs/prismic": "^3.1.1",
-    "@nuxtjs/tailwindcss": "^6.11.4",
-    "@slicemachine/adapter-nuxt": "^0.3.38",
+    "@nuxtjs/prismic": "^3.2.1",
+    "@nuxtjs/tailwindcss": "^6.12.0",
+    "@slicemachine/adapter-nuxt": "alpha.lh-slice-primary-group-mocks",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "concurrently": "^8.2.2",
     "eslint": "^8.57.0",
-    "nuxt": "^3.11.1",
-    "slice-machine-ui": "^1.26.0"
+    "nuxt": "^3.11.2",
+    "slice-machine-ui": "alpha.lh-slice-primary-group-mocks"
   }
 }
