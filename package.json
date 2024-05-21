@@ -25,11 +25,11 @@
     "@nuxtjs/i18n": "next",
     "@nuxtjs/prismic": "^3.2.1",
     "@nuxtjs/tailwindcss": "^6.12.0",
-    "@slicemachine/adapter-nuxt": "alpha.lh-slice-primary-group-mocks",
+    "@slicemachine/adapter-nuxt": "^0.3.39",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "concurrently": "^8.2.2",
     "eslint": "^8.57.0",
     "nuxt": "^3.11.2",
-    "slice-machine-ui": "alpha.lh-slice-primary-group-mocks"
+    "slice-machine-ui": "^2.0.0"
   }
 }
