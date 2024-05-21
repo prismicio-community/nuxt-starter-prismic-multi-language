@@ -45,9 +45,9 @@ const descriptionSerializer: HTMLRichTextMapSerializer = {
       </div>
       <ul class="grid gap-10">
         <PrismicRichText
-          v-for="item in slice.items"
-          :key="$prismic.asText(item.featureDescription)"
-          :field="item.featureDescription"
+          v-for="feature in slice.primary.features"
+          :key="$prismic.asText(feature.description)"
+          :field="feature.description"
           :html-serializer="descriptionSerializer"
           wrapper="li"
           class="leading-relaxed"
