@@ -3,7 +3,11 @@ import { repositoryName } from './slicemachine.config.json'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: true,
+  future: {
+    compatibilityVersion: 4
+  },
+
+  devtools: { enabled: true },
 
   app: {
     head: {
@@ -36,6 +40,7 @@ export default defineNuxtConfig({
   ],
 
   modules: [
+    '@nuxt/eslint',
     '@nuxtjs/i18n',
     '@nuxtjs/prismic',
     '@nuxtjs/tailwindcss'
