@@ -1,4 +1,3 @@
-import tailwindAspectRatio from '@tailwindcss/aspect-ratio'
 import { repositoryName } from './slicemachine.config.json'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -56,20 +55,5 @@ export default defineNuxtConfig({
     preview: '/api/preview'
   },
 
-  tailwindcss: {
-    config: {
-      content: [
-        './app/**/*.{js,ts,vue}',
-        './slices/**/*.{js,ts,vue}'
-      ],
-      theme: {
-        fontFamily: {
-          sans: 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-          serif:
-            '"Libre Baskerville", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif'
-        },
-      },
-      plugins: [tailwindAspectRatio]
-    }
-  }
+  compatibilityDate: '2025-01-06',
 })
