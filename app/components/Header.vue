@@ -33,7 +33,7 @@ const localePath = useLocalePath()
             v-for="lang in alternateLanguages"
             :key="lang.lang"
           >
-            <PrismicLink :field="{ ...lang, link_type: 'Document' }">
+            <PrismicLink :field="{ ...lang, tags: [], link_type: 'Document' }">
               <span class="sr-only">{{ lang.lang }}</span>
               <span
                 class="fi"

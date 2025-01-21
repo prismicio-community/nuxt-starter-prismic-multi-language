@@ -1,4 +1,4 @@
-import { type HTMLRichTextMapSerializer } from '@prismicio/client';
+import type { HTMLRichTextMapSerializer } from '@prismicio/client';
 
 const serializer: HTMLRichTextMapSerializer = {
   paragraph: ({ children }) =>
