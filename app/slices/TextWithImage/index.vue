@@ -1,16 +1,14 @@
 <script setup lang="ts">
-import type { Content, HTMLRichTextMapSerializer } from '@prismicio/client'
+import type { Content } from '@prismicio/client'
+import type { RichTextComponents } from '@prismicio/vue';
+import defaultComponents from '~/prismic/richTextComponents';
 
 defineProps(getSliceComponentProps<Content.TextWithImageSlice>());
 
-const prismic = usePrismic()
-
-const serializer: HTMLRichTextMapSerializer = {
-  ...prismic.options.richTextSerializer,
-  heading1: ({ children }) =>
-    /* html */ `<h2 class="font-semibold tracking-tighter text-4xl md:text-6xl mb-8 last:mb-0">${children}</h2>`,
-  heading2: ({ children }) =>
-    /* html */ `<h3 class="font-semibold tracking-tighter text-2xl mb-2 last:mb-0">${children}</h3>`,
+const components: RichTextComponents = {
+  ...defaultComponents,
+  heading1: { as: 'h2', class: 'font-semibold tracking-tighter text-4xl md:text-6xl mb-8 last:mb-0' },
+  heading2: { as: 'h3', class: 'font-semibold tracking-tighter text-2xl mb-2 last:mb-0' },
 }
 </script>
 
@@ -30,13 +28,12 @@ const serializer: HTMLRichTextMapSerializer = {
           class="relative"
         />
       </div>
-      <PrismicRichText
+      <div
         v-if="$prismic.isFilled.richText(slice.primary.text)"
-        :field="slice.primary.text"
-        :html-serializer="serializer"
-        wrapper="div"
         class="max-w-prose self-end leading-relaxed md:col-span-7"
-      />
+      >
+        <PrismicRichText :field="slice.primary.text" :components="components" />
+      </div>
     </div>
   </Bounded>
 </template>
