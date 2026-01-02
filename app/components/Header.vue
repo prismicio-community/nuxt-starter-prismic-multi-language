@@ -29,18 +29,20 @@ const localePath = useLocalePath()
               <PrismicText :field="item.label" />
             </PrismicLink>
           </li>
-          <li
-            v-for="lang in alternateLanguages"
-            :key="lang.lang"
-          >
-            <PrismicLink :field="{ ...lang, tags: [], link_type: 'Document' }">
-              <span class="sr-only">{{ lang.lang }}</span>
-              <span
-                class="fi"
-                :class="`fi-${lang.lang.substring(3).toLowerCase()}`"
-              />
-            </PrismicLink>
-          </li>
+          <ClientOnly>
+            <li
+              v-for="lang in alternateLanguages"
+              :key="lang.lang"
+            >
+              <PrismicLink :field="{ ...lang, tags: [], link_type: 'Document' }">
+                <span class="sr-only">{{ lang.lang }}</span>
+                <span
+                  class="fi"
+                  :class="`fi-${lang.lang.substring(3).toLowerCase()}`"
+                />
+              </PrismicLink>
+            </li>
+          </ClientOnly>
         </ul>
       </nav>
     </div>
