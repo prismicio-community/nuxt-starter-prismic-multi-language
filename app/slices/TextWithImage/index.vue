@@ -1,11 +1,7 @@
 <script setup lang="ts">
 import type { Content, HTMLRichTextMapSerializer } from '@prismicio/client'
 
-// The array passed to \`getSliceComponentProps\` is purely optional.
-// Consider it as a visual hint for you when templating your slice.
-defineProps(getSliceComponentProps<Content.TextWithImageSlice>(
-  ['slice', 'index', 'slices', 'context']
-));
+defineProps(getSliceComponentProps<Content.TextWithImageSlice>());
 
 const prismic = usePrismic()
 
@@ -35,7 +31,7 @@ const serializer: HTMLRichTextMapSerializer = {
         />
       </div>
       <PrismicRichText
-        v-if="$prismic.asText(slice.primary.text)"
+        v-if="$prismic.isFilled.richText(slice.primary.text)"
         :field="slice.primary.text"
         :html-serializer="serializer"
         wrapper="div"

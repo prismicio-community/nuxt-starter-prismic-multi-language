@@ -22,11 +22,11 @@ const localePath = useLocalePath()
         <ul class="flex flex-wrap gap-6 md:gap-10">
           <li
             v-for="item in navigation?.data.links"
-            :key="$prismic.asText(item.label)"
+            :key="JSON.stringify(item.label)"
             class="font-semibold tracking-tight text-slate-800"
           >
             <PrismicLink :field="item.link">
-              {{ $prismic.asText(item.label ) }}
+              <PrismicText :field="item.label" />
             </PrismicLink>
           </li>
           <li

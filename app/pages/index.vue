@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import { asText } from '@prismicio/client'
 import { components } from '~/slices'
 
 const { locale } = useI18n()
-const prismic = usePrismic()
+const { client } = usePrismic()
 const { data: page } = await useAsyncData(`${locale.value}/index`, () =>
-  prismic.client.getByUID('page', 'home', { lang: locale.value })
+  client.getByUID('page', 'home', { lang: locale.value })
 )
 
 watch(() => page.value?.alternate_languages, () => {
@@ -12,14 +13,12 @@ watch(() => page.value?.alternate_languages, () => {
 }, { immediate: true })
 
 useHead({
-  title: computed(() => prismic.asText(page.value?.data.title))
+  title: computed(() => asText(page.value?.data.title))
 })
 </script>
 
 <template>
-  <SliceZone
-    wrapper="main"
-    :slices="page?.data.slices ?? []"
-    :components="components"
-  />
+  <main>
+    <SliceZone :slices="page?.data.slices ?? []" :components="components" />
+  </main>
 </template>

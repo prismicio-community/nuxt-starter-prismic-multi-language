@@ -50,5 +50,5 @@ export default defineNuxtConfig({
     preview: '/api/preview'
   },
 
-  compatibilityDate: '2025-07-16',
+  compatibilityDate: '2026-01-02',
 })
