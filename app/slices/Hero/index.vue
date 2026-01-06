@@ -1,16 +1,14 @@
 <script setup lang="ts">
-import type { Content, HTMLRichTextMapSerializer } from '@prismicio/client'
+import type { Content } from '@prismicio/client'
+import type { RichTextComponents } from '@prismicio/vue';
+import defaultComponents from '~/prismic/richTextComponents';
 
 defineProps(getSliceComponentProps<Content.HeroSlice>());
 
-const prismic = usePrismic()
-
-const serializer: HTMLRichTextMapSerializer = {
-  ...prismic.options.richTextSerializer,
-  heading1: ({ children }) =>
-    /* html */ `<h2 class="font-semibold tracking-tighter text-5xl md:text-[5rem] mb-6 last:mb-0">${children}</h2>`,
-  paragraph: ({ children }) =>
-    /* html */ `<p class="mb-6 last:mb-0">${children}</p>`
+const components: RichTextComponents = {
+  ...defaultComponents,
+  heading1: { as: 'h2', class: 'font-semibold tracking-tighter text-5xl md:text-[5rem] mb-6 last:mb-0' },
+  paragraph: { class: 'mb-6 last:mb-0' },
 }
 </script>
 
@@ -21,13 +19,12 @@ const serializer: HTMLRichTextMapSerializer = {
     class="bg-white pb-0 md:pb-0"
   >
     <div class="grid grid-cols-1 justify-items-center gap-10">
-      <PrismicRichText
+      <div
         v-if="$prismic.isFilled.richText(slice.primary.text)"
-        :field="slice.primary.text"
-        :html-serializer="serializer"
-        wrapper="div"
         class="max-w-2xl text-center leading-relaxed"
-      />
+      >
+        <PrismicRichText :field="slice.primary.text" :components="components" />
+      </div>
       <PrismicLink
         v-if="slice.variation === 'withButton' && slice.primary.buttonLink"
         :field="slice.primary.buttonLink"

@@ -1,20 +1,19 @@
 <script setup lang="ts">
-import type { Content, HTMLRichTextMapSerializer } from '@prismicio/client'
+import type { Content } from '@prismicio/client'
+import type { RichTextComponents } from '@prismicio/vue';
+import defaultComponents from '~/prismic/richTextComponents';
 
 defineProps(getSliceComponentProps<Content.TextWithFeaturesSlice>());
 
-const prismic = usePrismic()
 
-const serializer: HTMLRichTextMapSerializer = {
-  ...prismic.options.richTextSerializer,
-  heading1: ({ children }) =>
-    /* html */ `<h2 class="font-semibold tracking-tighter text-4xl md:text-6xl mb-4 last:mb-0">${children}</h2>`,
+const components: RichTextComponents = {
+  ...defaultComponents,
+  heading1: { as: 'h2', class: 'font-semibold tracking-tighter text-4xl md:text-6xl mb-4 last:mb-0' },
 }
 
-const descriptionSerializer: HTMLRichTextMapSerializer = {
-  ...prismic.options.richTextSerializer,
-  heading3: ({ children }) =>
-    /* html */ `<h3 class="font-semibold tracking-tighter text-2xl mb-2 last:mb-0">${children}</h3>`,
+const descriptionComponents: RichTextComponents = {
+  ...defaultComponents,
+  heading3: { class: 'font-semibold tracking-tighter text-2xl mb-2 last:mb-0' },
 }
 </script>
 
@@ -31,23 +30,20 @@ const descriptionSerializer: HTMLRichTextMapSerializer = {
           :field="slice.primary.icon"
           class="relative"
         />
-        <PrismicRichText
+        <div
           v-if="$prismic.isFilled.richText(slice.primary.text)"
-          :field="slice.primary.text"
-          :html-serializer="serializer"
-          wrapper="div"
           class="leading-relaxed"
-        />
+        >
+          <PrismicRichText :field="slice.primary.text" :components="components" />
+        </div>
       </div>
       <ul class="grid gap-10">
-        <PrismicRichText
+        <li
           v-for="feature in slice.primary.features"
           :key="JSON.stringify(feature.description)"
-          :field="feature.description"
-          :html-serializer="descriptionSerializer"
-          wrapper="li"
-          class="leading-relaxed"
-        />
+        >
+          <PrismicRichText :field="feature.description" :components="descriptionComponents" />
+        </li>
       </ul>
     </div>
   </Bounded>

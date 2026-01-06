@@ -1,16 +1,13 @@
 <script setup lang="ts">
-import type { HTMLRichTextMapSerializer } from '@prismicio/client';
+import type { RichTextComponents } from '@prismicio/vue';
+import defaultComponents from '~/prismic/richTextComponents';
 
 const settings = useSettings()
 
-const prismic = usePrismic()
-
-const serializer: HTMLRichTextMapSerializer = {
-  ...prismic.options.richTextSerializer,
-  heading1: ({ children }) =>
-    /* html */ `<h2 class="font-semibold tracking-tighter text-4xl md:text-6xl mb-4 text-white last:mb-0">${children}</h2>`,
-  paragraph: ({ children }) =>
-    /* html */ `<p class="mb-4 italic last:mb-0">${children}</p>`
+const components: RichTextComponents = {
+  ...defaultComponents,
+  heading1: { as: 'h2', class: 'font-semibold tracking-tighter text-4xl md:text-6xl mb-4 text-white last:mb-0' },
+  paragraph: { class: 'mb-4 italic last:mb-0' },
 }
 </script>
 
@@ -21,13 +18,15 @@ const serializer: HTMLRichTextMapSerializer = {
       method="post"
       class="grid w-full max-w-xl grid-cols-1 gap-6"
     >
-      <PrismicRichText
+      <div
         v-if="$prismic.isFilled.richText(settings?.data.newsletterDescription)"
-        :field="settings?.data.newsletterDescription"
-        :html-serializer="serializer"
-        wrapper="div"
         class="text-center tracking-tight text-slate-300"
-      />
+      >
+        <PrismicRichText
+          :field="settings?.data.newsletterDescription"
+          :components="components"
+        />
+      </div>
       <div class="grid grid-cols-1 gap-2">
         <div class="relative">
           <label>
